@@ -15,40 +15,30 @@
         nav ul li {
             margin: 10px 0;
         }
-        nav ul li button {
-            background: none;
-            border: none;
-            color: blue;
-            cursor: pointer;
-            text-decoration: none;
-        }
-        nav ul li button:hover {
-            text-decoration: underline;
-        }
         .content {
             display: none;
+        }
+        h2 {
+            cursor: pointer;
+            color: blue;
+        }
+        h2:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
 <body>
     <h1>Willkommen auf meiner Webseite</h1>
-    <nav>
-        <ul>
-            <li><button onclick="toggleSection('ueber-mich')">Über mich</button></li>
-            <li><button onclick="toggleSection('projekte')">Projekte</button></li>
-            <li><button onclick="toggleSection('kontakt')">Kontakt</button></li>
-        </ul>
-    </nav>
 
     <section id="ueber-mich">
-        <h2>Über mich</h2>
+        <h2 onclick="toggleSection('ueber-mich')">Über mich</h2>
         <div id="ueber-mich-content" class="content">
             <p>Hier ist ein Beispieltext über mich. Ich bin ein Entwickler und arbeite gerne an spannenden Projekten.</p>
         </div>
     </section>
 
     <section id="projekte">
-        <h2>Projekte</h2>
+        <h2 onclick="toggleSection('projekte')">Projekte</h2>
         <div id="projekte-content" class="content">
             <p>Hier sind einige meiner Projekte:</p>
             <ul>
@@ -60,7 +50,7 @@
     </section>
 
     <section id="kontakt">
-        <h2>Kontakt</h2>
+        <h2 onclick="toggleSection('kontakt')">Kontakt</h2>
         <div id="kontakt-content" class="content">
             <p>Du kannst mich über <a href="mailto:deine-email@example.com">E-Mail</a> erreichen.</p>
         </div>
