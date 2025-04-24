@@ -15,12 +15,18 @@
         nav ul li {
             margin: 10px 0;
         }
-        nav ul li a {
-            text-decoration: none;
+        nav ul li button {
+            background: none;
+            border: none;
             color: blue;
+            cursor: pointer;
+            text-decoration: none;
         }
-        nav ul li a:hover {
+        nav ul li button:hover {
             text-decoration: underline;
+        }
+        .content {
+            display: none;
         }
     </style>
 </head>
@@ -28,30 +34,47 @@
     <h1>Willkommen auf meiner Webseite</h1>
     <nav>
         <ul>
-            <li><a href="#ueber-mich">Über mich</a></li>
-            <li><a href="#projekte">Projekte</a></li>
-            <li><a href="#kontakt">Kontakt</a></li>
+            <li><button onclick="toggleSection('ueber-mich')">Über mich</button></li>
+            <li><button onclick="toggleSection('projekte')">Projekte</button></li>
+            <li><button onclick="toggleSection('kontakt')">Kontakt</button></li>
         </ul>
     </nav>
 
     <section id="ueber-mich">
         <h2>Über mich</h2>
-        <p>Hier ist ein Beispieltext über mich. Ich bin ein Entwickler und arbeite gerne an spannenden Projekten.</p>
+        <div id="ueber-mich-content" class="content">
+            <p>Hier ist ein Beispieltext über mich. Ich bin ein Entwickler und arbeite gerne an spannenden Projekten.</p>
+        </div>
     </section>
 
     <section id="projekte">
         <h2>Projekte</h2>
-        <p>Hier sind einige meiner Projekte:</p>
-        <ul>
-            <li>Projekt 1: Beschreibung</li>
-            <li>Projekt 2: Beschreibung</li>
-            <li>Projekt 3: Beschreibung</li>
-        </ul>
+        <div id="projekte-content" class="content">
+            <p>Hier sind einige meiner Projekte:</p>
+            <ul>
+                <li>Projekt 1: Beschreibung</li>
+                <li>Projekt 2: Beschreibung</li>
+                <li>Projekt 3: Beschreibung</li>
+            </ul>
+        </div>
     </section>
 
     <section id="kontakt">
         <h2>Kontakt</h2>
-        <p>Du kannst mich über <a href="mailto:iuztrewq@mailbox.org">E-Mail</a> erreichen.</p>
+        <div id="kontakt-content" class="content">
+            <p>Du kannst mich über <a href="mailto:deine-email@example.com">E-Mail</a> erreichen.</p>
+        </div>
     </section>
+
+    <script>
+        function toggleSection(sectionId) {
+            var content = document.getElementById(sectionId + '-content');
+            if (content.style.display === 'none' || content.style.display === '') {
+                content.style.display = 'block';
+            } else {
+                content.style.display = 'none';
+            }
+        }
+    </script>
 </body>
 </html>
